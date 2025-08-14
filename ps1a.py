@@ -88,22 +88,42 @@ Created on Thu Jul 31 14:28:41 2025
 
 
 #guess between 0-1
-num_guesses = 0
-number = 0.5
-upper_bound = 1
-lower_bound = number
-guess = (upper_bound + lower_bound)/2
-epsilon = .01
+# num_guesses = 0
+# number = 0.5
+# upper_bound = 1
+# lower_bound = number
+# guess = (upper_bound + lower_bound)/2
+# epsilon = .01
 
-while abs(guess**2 - number) >= epsilon:
-    if guess**2 > number:
-        upper_bound = guess
-    else:
-        lower_bound = guess
-    num_guesses += 1
-    guess = (upper_bound + lower_bound)/2
+# while abs(guess**2 - number) >= epsilon:
+#     if guess**2 > number:
+#         upper_bound = guess
+#     else:
+#         lower_bound = guess
+#     num_guesses += 1
+#     guess = (upper_bound + lower_bound)/2
     
-    if num_guesses > 50:
-        break
+#     if num_guesses > 50:
+#         break
 
-print(f"{guess} is my guess for the square root of {number} after {num_guesses} tries")
+# print(f"{guess} is my guess for the square root of {number} after {num_guesses} tries")
+
+
+# find the cube roots using bisection search
+num_guesses = 0
+cube = 27
+epsilon = 0.0001
+low = 0
+high = cube
+guess = (high + low)/2
+
+while abs(guess**3 - cube) >= epsilon:
+    if guess**3 > cube:
+        high = guess
+    else:
+        low = guess
+    guess = (high + low)/2
+    num_guesses += 1
+    print(f"{high}, {low}")
+
+print(f"the cube root of {cube} is {guess} after {num_guesses} guesses")
