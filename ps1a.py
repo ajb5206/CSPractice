@@ -87,15 +87,15 @@ Created on Thu Jul 31 14:28:41 2025
 # print(f"{guess} is my guess for the square root of {number} after {num_guesses} tries")
 
 
-
+#guess between 0-1
 num_guesses = 0
-number = 0.125
-guess = number/2
-upperbound = 1
-lower_bound = 0
-epsilon = .0001
+number = 0.5
+upper_bound = 1
+lower_bound = number
+guess = (upper_bound + lower_bound)/2
+epsilon = .01
 
-while abs(guess**2 - number) > epsilon and guess > number:
+while abs(guess**2 - number) >= epsilon:
     if guess**2 > number:
         upper_bound = guess
     else:
