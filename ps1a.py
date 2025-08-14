@@ -112,7 +112,7 @@ Created on Thu Jul 31 14:28:41 2025
 # find the cube roots using bisection search
 num_guesses = 0
 cube = 27
-epsilon = 0.0001
+epsilon = 0.0000000001
 low = 0
 high = cube
 guess = (high + low)/2
