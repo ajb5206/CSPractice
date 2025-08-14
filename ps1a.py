@@ -129,7 +129,7 @@ Created on Thu Jul 31 14:28:41 2025
 # print(f"the cube root of {cube} is {guess} after {num_guesses} guesses")
 
 epsilon = 0.01
-k = 24
+k = 54321
 guess = k/2.0
 num_guesses = 0
 
@@ -137,4 +137,4 @@ while abs(guess*guess - k) >= epsilon:
     guess = guess - (((guess**2) - k)/(2*guess))
     num_guesses += 1
 
-print(f"the cube root of {k} is {guess} after {num_guesses} guesses")
+print(f"the square root of {k} is {guess} after {num_guesses} guesses")
