@@ -110,20 +110,31 @@ Created on Thu Jul 31 14:28:41 2025
 
 
 # find the cube roots using bisection search
+# num_guesses = 0
+# cube = 27
+# epsilon = 0.0000000001
+# low = 0
+# high = cube
+# guess = (high + low)/2
+
+# while abs(guess**3 - cube) >= epsilon:
+#     if guess**3 > cube:
+#         high = guess
+#     else:
+#         low = guess
+#     guess = (high + low)/2
+#     num_guesses += 1
+#     print(f"{high}, {low}")
+
+# print(f"the cube root of {cube} is {guess} after {num_guesses} guesses")
+
+epsilon = 0.01
+k = 24
+guess = k/2.0
 num_guesses = 0
-cube = 27
-epsilon = 0.0000000001
-low = 0
-high = cube
-guess = (high + low)/2
 
-while abs(guess**3 - cube) >= epsilon:
-    if guess**3 > cube:
-        high = guess
-    else:
-        low = guess
-    guess = (high + low)/2
+while abs(guess*guess - k) >= epsilon:
+    guess = guess - (((guess**2) - k)/(2*guess))
     num_guesses += 1
-    print(f"{high}, {low}")
 
-print(f"the cube root of {cube} is {guess} after {num_guesses} guesses")
+print(f"the cube root of {k} is {guess} after {num_guesses} guesses")
