@@ -140,27 +140,30 @@ Created on Thu Jul 31 14:28:41 2025
 # print(f"the square root of {k} is {guess} after {num_guesses} guesses")
 
 def eval_quadratic(a, b, c, x):
-    """
-    a, b, c: numerical values for the coefficients of a quadratic equation
-    x: numerical value at which to evaluate the quadratic.
-    Returns the value of the quadratic a×x² + b×x + c.
-    """
+    # """
+    # a, b, c: numerical values for the coefficients of a quadratic equation
+    # x: numerical value at which to evaluate the quadratic.
+    # Returns the value of the quadratic a×x² + b×x + c.
+    # """
     # Your code here
     
-    epsilon = .001
-    k = x
-    guess = k/2.0
-    num_guesses = 0
+    # epsilon = .001
+    # k = x
+    # guess = k/2.0
+    # num_guesses = 0
         
-    while abs(guess**2 - k) >= epsilon:
-        guess = guess - (a(guess**2) + b(guess) + c)/(2(a)(guess) + b)
-        if num_guesses > 100:
-            break
-    print(num_guesses)
+    # while abs(guess**2 - k) >= epsilon:
+    #     guess = guess - (a(guess**2) + b(guess) + c)/(2(a)(guess) + b)
+    #     if num_guesses > 100:
+    #         break
+    # print(num_guesses)
+    
+    # value = a*(x**2)
+    return a*(x**2) + b*(x) + c
 # Examples:    
 print(eval_quadratic(1, 1, 1, 1)) # prints 3
 
 
-
+# eval_quadratic(1, 1, 1, 1)
 
 
