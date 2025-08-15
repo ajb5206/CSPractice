@@ -139,22 +139,28 @@ Created on Thu Jul 31 14:28:41 2025
 
 # print(f"the square root of {k} is {guess} after {num_guesses} guesses")
 
-def two_quadratics(a1, b1, c1, x1, a2, b2, c2, x2):
+def eval_quadratic(a, b, c, x):
     """
-    a1, b1, c1: one set of coefficients of a quadratic equation
-    a2, b2, c2: another set of coefficients of a quadratic equation
-    x1, x2: values at which to evaluate the quadratics
-    Evaluates one quadratic with coefficients a1, b1, c1, at x1.
-    Evaluates another quadratic with coefficients a2, b2, c2, at x2.
-    Prints the sum of the two evaluations. Does not return anything.
+    a, b, c: numerical values for the coefficients of a quadratic equation
+    x: numerical value at which to evaluate the quadratic.
+    Returns the value of the quadratic a×x² + b×x + c.
     """
-    # x = (-b ± √(b² - 4ac)) / 2a
-    x1 = 0
-    x2 = 0
+    # Your code here
     
-    x1 = (-1(b1) + ((b1)**2 - (4(a1)(c1))**(-2))/2(a1)
-    
-    x2 = (-1(b2) + ((b2)**2 - (4(a2)(c2))**(-2))/2(a2)
-    print(f"{x1 + x2}")
-    
-two_quadratics(1, 1, 1, 1, 1, 1, 1, 1)
+    epsilon = .001
+    k = x
+    guess = k/2.0
+    num_guesses = 0
+        
+    while abs(guess**2 - k) >= epsilon:
+        guess = guess - (a(guess**2) + b(guess) + c)/(2(a)(guess) + b)
+        if num_guesses > 100:
+            break
+    print(num_guesses)
+# Examples:    
+print(eval_quadratic(1, 1, 1, 1)) # prints 3
+
+
+
+
+
