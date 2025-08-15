@@ -128,13 +128,33 @@ Created on Thu Jul 31 14:28:41 2025
 
 # print(f"the cube root of {cube} is {guess} after {num_guesses} guesses")
 
-epsilon = 0.01
-k = 54321
-guess = k/2.0
-num_guesses = 0
+# epsilon = 0.01
+# k = 54321
+# guess = k/2.0
+# num_guesses = 0
 
-while abs(guess*guess - k) >= epsilon:
-    guess = guess - (((guess**2) - k)/(2*guess))
-    num_guesses += 1
+# while abs(guess*guess - k) >= epsilon:
+#     guess = guess - (((guess**2) - k)/(2*guess))
+#     num_guesses += 1
 
-print(f"the square root of {k} is {guess} after {num_guesses} guesses")
+# print(f"the square root of {k} is {guess} after {num_guesses} guesses")
+
+def two_quadratics(a1, b1, c1, x1, a2, b2, c2, x2):
+    """
+    a1, b1, c1: one set of coefficients of a quadratic equation
+    a2, b2, c2: another set of coefficients of a quadratic equation
+    x1, x2: values at which to evaluate the quadratics
+    Evaluates one quadratic with coefficients a1, b1, c1, at x1.
+    Evaluates another quadratic with coefficients a2, b2, c2, at x2.
+    Prints the sum of the two evaluations. Does not return anything.
+    """
+    # x = (-b ± √(b² - 4ac)) / 2a
+    x1 = 0
+    x2 = 0
+    
+    x1 = (-1(b1) + ((b1)**2 - (4(a1)(c1))**(-2))/2(a1)
+    
+    x2 = (-1(b2) + ((b2)**2 - (4(a2)(c2))**(-2))/2(a2)
+    print(f"{x1 + x2}")
+    
+two_quadratics(1, 1, 1, 1, 1, 1, 1, 1)
