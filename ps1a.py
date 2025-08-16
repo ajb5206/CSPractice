@@ -200,16 +200,47 @@ Created on Thu Jul 31 14:28:41 2025
 
 # print(is_palindrome("2222"))
 
-def keep_consonants(word):
-    """word is a string of lowercase letters
-        returns a string containing only the consonants
-        in the order they appear"""
-    new_word = ""
-    vowels = "aeiou"
-    for char in word:
-        if char not in vowels:
-            new_word += char
+# def keep_consonants(word):
+#     """word is a string of lowercase letters
+#         returns a string containing only the consonants
+#         in the order they appear"""
+#     new_word = ""
+#     vowels = "aeiou"
+#     for char in word:
+#         if char not in vowels:
+#             new_word += char
                 
-    return new_word
+#     return new_word
     
-print(keep_consonants("helloe"))
+# print(keep_consonants("helloe"))
+
+def first_to_last_diff(s, c):
+    """ s is a string, c is single character string
+        Returns the difference between the index where c first
+        occurs and the index where c last occurs. If c does not 
+        occur in s, returns -1. 
+    """
+    initial_loc = 0
+    last_loc = 0
+    if c not in s:
+        return -1
+    
+    
+    
+    
+    
+    
+    for index, char in enumerate(s):
+        if char == c:
+            initial_loc = index
+            break
+    for index, char in enumerate(s[::-1]):
+        if char == c:
+            last_loc = (len(s) - 1) - index
+            break
+    return last_loc - initial_loc
+
+print(first_to_last_diff("pants", "t"))
+print(first_to_last_diff('aaaa', 'a'))  # prints 3
+print(first_to_last_diff('abcabcabc', 'b'))  # prints 6
+print(first_to_last_diff('xyz', 'b'))  # prints -1
