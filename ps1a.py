@@ -224,11 +224,9 @@ def first_to_last_diff(s, c):
     last_loc = 0
     if c not in s:
         return -1
- # alternate method
+ # alternate method put all occurances in a list of indices and subtract the last from the first
     indices = [i for i, char in enumerate(s) if char == c]
-    # for i, char in enumerate(s):
-    #     if char == c:
-    #         indices = i
+    
     return indices[len(indices)-1] - indices[0]
     
     
