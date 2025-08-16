@@ -159,9 +159,9 @@ def eval_quadratic(a, b, c, x):
     # print(num_guesses)
     
     # value = a*(x**2)
-    return a*(x**2) + b*(x) + c
-# Examples:    
-print(eval_quadratic(1, 1, 1, 1)) # prints 3
+#     return a*(x**2) + b*(x) + c
+# # Examples:    
+# print(eval_quadratic(1, 1, 1, 1)) # prints 3
 
 
 # eval_quadratic(1, 1, 1, 1)
@@ -190,5 +190,10 @@ print(eval_quadratic(1, 1, 1, 1)) # prints 3
 
 def add_odds(a, b):
     """Add odd integers between and including a - b"""
-    
-    total
+    total = 0
+    for num in range(a, b+1):
+        if num%2 != 0:
+            total = total + num
+    return total
+
+print(add_odds(1,5))
