@@ -187,10 +187,15 @@ Created on Thu Jul 31 14:28:41 2025
 
 
 #Add odd integers between and including a - b
-def add_odds(a,b):
-    total = 0
-    for num in range(a, b+1):
-        total = total + num if num % 2 != 0 else total 
-    return total
-print(add_odds(1,11))
+# def add_odds(a,b):
+#     total = 0
+#     for num in range(a, b+1):
+#         total = total + num if num % 2 != 0 else total 
+#     return total
+# print(add_odds(1,11))
+
+def is_palindrome(str):
+    """ check if given string is a palindrome """
+    
+    return True
 
