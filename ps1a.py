@@ -194,8 +194,22 @@ Created on Thu Jul 31 14:28:41 2025
 #     return total
 # print(add_odds(1,11))
 
-def is_palindrome(str):
-    """ check if given string is a palindrome """
-    return str == str[::-1]
+# def is_palindrome(str):
+#     """ check if given string is a palindrome """
+#     return str == str[::-1]
 
-print(is_palindrome("2222"))
+# print(is_palindrome("2222"))
+
+def keep_consonants(word):
+    """word is a string of lowercase letters
+        returns a string containing only the consonants
+        in the order they appear"""
+    new_word = ""
+    vowels = "aeiou"
+    for char in word:
+        if char not in vowels:
+            new_word += char
+                
+    return new_word
+    
+print(keep_consonants("helloe"))
