@@ -196,6 +196,6 @@ Created on Thu Jul 31 14:28:41 2025
 
 def is_palindrome(str):
     """ check if given string is a palindrome """
-    
-    return True
+    return str == str[::-1]
 
+print(is_palindrome("2222"))
