@@ -224,21 +224,26 @@ def first_to_last_diff(s, c):
     last_loc = 0
     if c not in s:
         return -1
+ # alternate method
+    indices = [i for i, char in enumerate(s) if char == c]
+    # for i, char in enumerate(s):
+    #     if char == c:
+    #         indices = i
+    return indices[len(indices)-1] - indices[0]
     
     
     
     
     
-    
-    for index, char in enumerate(s):
-        if char == c:
-            initial_loc = index
-            break
-    for index, char in enumerate(s[::-1]):
-        if char == c:
-            last_loc = (len(s) - 1) - index
-            break
-    return last_loc - initial_loc
+    # for index, char in enumerate(s):
+    #     if char == c:
+    #         initial_loc = index
+    #         break
+    # for index, char in enumerate(s[::-1]):
+    #     if char == c:
+    #         last_loc = (len(s) - 1) - index
+    #         break
+    # return last_loc - initial_loc
 
 print(first_to_last_diff("pants", "t"))
 print(first_to_last_diff('aaaa', 'a'))  # prints 3
