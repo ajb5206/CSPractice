@@ -139,7 +139,7 @@ Created on Thu Jul 31 14:28:41 2025
 
 # print(f"the square root of {k} is {guess} after {num_guesses} guesses")
 
-def eval_quadratic(a, b, c, x):
+# def eval_quadratic(a, b, c, x):
     # """
     # a, b, c: numerical values for the coefficients of a quadratic equation
     # x: numerical value at which to evaluate the quadratic.
@@ -187,13 +187,10 @@ def eval_quadratic(a, b, c, x):
 
 
 #Add odd integers between and including a - b
-
-def add_odds(a, b):
-    """Add odd integers between and including a - b"""
+def add_odds(a,b):
     total = 0
     for num in range(a, b+1):
-        if num%2 != 0:
-            total = total + num
+        total = total + num if num % 2 != 0 else total 
     return total
+print(add_odds(1,11))
 
-print(add_odds(1,5))
