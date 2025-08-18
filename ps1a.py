@@ -214,36 +214,41 @@ Created on Thu Jul 31 14:28:41 2025
     
 # print(keep_consonants("helloe"))
 
-def first_to_last_diff(s, c):
-    """ s is a string, c is single character string
-        Returns the difference between the index where c first
-        occurs and the index where c last occurs. If c does not 
-        occur in s, returns -1. 
-    """
-    initial_loc = 0
-    last_loc = 0
-    if c not in s:
-        return -1
- # alternate method put all occurances in a list of indices and subtract the last from the first
-    indices = [i for i, char in enumerate(s) if char == c]
+# def first_to_last_diff(s, c):
+#     """ s is a string, c is single character string
+#         Returns the difference between the index where c first
+#         occurs and the index where c last occurs. If c does not 
+#         occur in s, returns -1. 
+#     """
+#     initial_loc = 0
+#     last_loc = 0
+#     if c not in s:
+#         return -1
+#  # alternate method put all occurances in a list of indices and subtract the last from the first
+#     indices = [i for i, char in enumerate(s) if char == c]
     
-    return indices[len(indices)-1] - indices[0]
-    
-    
+#     return indices[len(indices)-1] - indices[0]
     
     
     
-    # for index, char in enumerate(s):
-    #     if char == c:
-    #         initial_loc = index
-    #         break
-    # for index, char in enumerate(s[::-1]):
-    #     if char == c:
-    #         last_loc = (len(s) - 1) - index
-    #         break
-    # return last_loc - initial_loc
+    
+    
+#     # for index, char in enumerate(s):
+#     #     if char == c:
+#     #         initial_loc = index
+#     #         break
+#     # for index, char in enumerate(s[::-1]):
+#     #     if char == c:
+#     #         last_loc = (len(s) - 1) - index
+#     #         break
+#     # return last_loc - initial_loc
 
-print(first_to_last_diff("pants", "t"))
-print(first_to_last_diff('aaaa', 'a'))  # prints 3
-print(first_to_last_diff('abcabcabc', 'b'))  # prints 6
-print(first_to_last_diff('xyz', 'b'))  # prints -1
+# print(first_to_last_diff("pants", "t"))
+# print(first_to_last_diff('aaaa', 'a'))  # prints 3
+# print(first_to_last_diff('abcabcabc', 'b'))  # prints 6
+# print(first_to_last_diff('xyz', 'b'))  # prints -1
+
+def count_nums_with_sqrt_close_to(n, epsilon):
+    """ n is an int > 2
+        epsilon is a positive number < 1
+        returns how many integers have a square root within epsilon of n """
