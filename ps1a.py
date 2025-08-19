@@ -227,7 +227,7 @@ Created on Thu Jul 31 14:28:41 2025
 #  # alternate method put all occurances in a list of indices and subtract the last from the first
 #     indices = [i for i, char in enumerate(s) if char == c]
     
-#     return indices[len(indices)-1] - indices[0]
+#     return indices[len(indices)-1] - indices[0] 
     
     
     
@@ -252,3 +252,11 @@ def count_nums_with_sqrt_close_to(n, epsilon):
     """ n is an int > 2
         epsilon is a positive number < 1
         returns how many integers have a square root within epsilon of n """
+
+    for num in range(2, 100):
+        # print(f"{99**0.5 - 10} nums")
+        if abs((num**0.5) - n) <= epsilon:
+            print(num)
+        
+count_nums_with_sqrt_close_to(10, .01)
+print(f"{99**0.5 - 10 <= 0.01} nums")
