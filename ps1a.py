@@ -248,6 +248,13 @@ Created on Thu Jul 31 14:28:41 2025
 # print(first_to_last_diff('abcabcabc', 'b'))  # prints 6
 # print(first_to_last_diff('xyz', 'b'))  # prints -1
 
+
+def bisection_root(number):
+    low = 0
+    high = number
+    guess = (high+low)/2
+    epsilon = 0.1
+
 def count_nums_with_sqrt_close_to(n, epsilon):
     """ n is an int > 2
         epsilon is a positive number < 1
