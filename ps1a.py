@@ -253,7 +253,7 @@ def bisection_root(number):
     low = 0
     high = number
     ans = (high+low)/2.0
-    epsilon = 0.1
+    epsilon = 0.001
     while abs(ans**2 - number) > epsilon:
         if ans**2 > number:
             high = ans
@@ -269,7 +269,7 @@ def count_nums_with_sqrt_close_to(n, epsilon):
 
     for num in range(2, n*n*n):
         # print(f"{99**0.5 - 10} nums")
-        if abs((num**0.5) - n) <= epsilon:
+        if abs((bisection_root(num)) - n) <= epsilon:
             print(num)
         
 count_nums_with_sqrt_close_to(10, .1)
