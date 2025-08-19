@@ -252,8 +252,15 @@ Created on Thu Jul 31 14:28:41 2025
 def bisection_root(number):
     low = 0
     high = number
-    guess = (high+low)/2
+    ans = (high+low)/2.0
     epsilon = 0.1
+    while abs(ans**2 - number) > epsilon:
+        if ans**2 > number:
+            high = ans
+        else:
+            low = ans
+        ans = (high + low)/2.0
+    return ans
 
 def count_nums_with_sqrt_close_to(n, epsilon):
     """ n is an int > 2
