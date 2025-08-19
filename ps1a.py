@@ -272,5 +272,9 @@ def count_nums_with_sqrt_close_to(n, epsilon):
         if abs((bisection_root(num)) - n) <= epsilon:
             # print(num)
             num_of_ints_in_range += 1
+        if bisection_root(num) - n > epsilon:
+            break
+            
     return num_of_ints_in_range
 print(count_nums_with_sqrt_close_to(10, .1))
+print(count_nums_with_sqrt_close_to(100, .1))
