@@ -273,6 +273,7 @@ def count_nums_with_sqrt_close_to(n, epsilon):
             # print(num)
             num_of_ints_in_range += 1
         if bisection_root(num) - n > epsilon:
+            # break out of loop once the upper bound of epsilon is crossed
             break
             
     return num_of_ints_in_range
