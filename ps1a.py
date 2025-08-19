@@ -268,9 +268,7 @@ def count_nums_with_sqrt_close_to(n, epsilon):
         returns how many integers have a square root within epsilon of n """
     num_of_ints_in_range = 0
     for num in range(2, n*n*n):
-        # print(f"{99**0.5 - 10} nums")
         if abs((bisection_root(num)) - n) <= epsilon:
-            # print(num)
             num_of_ints_in_range += 1
         if bisection_root(num) - n > epsilon:
             # break out of loop once the upper bound of epsilon is crossed
@@ -278,4 +276,4 @@ def count_nums_with_sqrt_close_to(n, epsilon):
             
     return num_of_ints_in_range
 print(count_nums_with_sqrt_close_to(10, .1))
-print(count_nums_with_sqrt_close_to(100, .1))
+# print(count_nums_with_sqrt_close_to(100, .1))
