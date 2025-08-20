@@ -345,10 +345,19 @@ amount_saved = 0
 r = 0.05
 months = 0
 
+# while amount_saved <= portion_down_payment:
+#     months += 1
+#     amount_saved += ((yearly_salary/12)*portion_saved) + amount_saved*(r/12)
+    
+# print(months)
+
+
+### Part b 
+semi_annual_raise = float(input("What is your semi annual raise? "))
+
 while amount_saved <= portion_down_payment:
     months += 1
     amount_saved += ((yearly_salary/12)*portion_saved) + amount_saved*(r/12)
-    # amount_saved += amount_saved*(r/12)
-    print(amount_saved)
-    
+    if months%6 ==0:
+        yearly_salary +=  yearly_salary * semi_annual_raise
 print(months)
