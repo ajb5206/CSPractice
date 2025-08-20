@@ -275,5 +275,15 @@ def count_nums_with_sqrt_close_to(n, epsilon):
             break
             
     return num_of_ints_in_range
-print(count_nums_with_sqrt_close_to(10, .1))
+# print(count_nums_with_sqrt_close_to(10, .1))
 # print(count_nums_with_sqrt_close_to(100, .1))
+
+def calc(op, x, y):
+    return op(x,y)
+
+def div(a,b):
+    if b != 0:
+        return a/b
+    print("Demon was 0.")
+
+res = calc(div,2,1)
