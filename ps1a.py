@@ -249,41 +249,64 @@ Created on Thu Jul 31 14:28:41 2025
 # print(first_to_last_diff('xyz', 'b'))  # prints -1
 
 
-def bisection_root(number):
-    low = 0
-    high = number
-    ans = (high+low)/2.0
-    epsilon = 0.001
-    while abs(ans**2 - number) > epsilon:
-        if ans**2 > number:
-            high = ans
-        else:
-            low = ans
-        ans = (high + low)/2.0
-    return ans
+# def bisection_root(number):
+#     low = 0
+#     high = number
+#     ans = (high+low)/2.0
+#     epsilon = 0.001
+#     while abs(ans**2 - number) > epsilon:
+#         if ans**2 > number:
+#             high = ans
+#         else:
+#             low = ans
+#         ans = (high + low)/2.0
+#     return ans
 
-def count_nums_with_sqrt_close_to(n, epsilon):
-    """ n is an int > 2
-        epsilon is a positive number < 1
-        returns how many integers have a square root within epsilon of n """
-    num_of_ints_in_range = 0
-    for num in range(2, n*n*n):
-        if abs((bisection_root(num)) - n) <= epsilon:
-            num_of_ints_in_range += 1
-        if bisection_root(num) - n > epsilon:
-            # break out of loop once the upper bound of epsilon is crossed
-            break
+# def count_nums_with_sqrt_close_to(n, epsilon):
+#     """ n is an int > 2
+#         epsilon is a positive number < 1
+#         returns how many integers have a square root within epsilon of n """
+#     num_of_ints_in_range = 0
+#     for num in range(2, n*n*n):
+#         if abs((bisection_root(num)) - n) <= epsilon:
+#             num_of_ints_in_range += 1
+#         if bisection_root(num) - n > epsilon:
+#             # break out of loop once the upper bound of epsilon is crossed
+#             break
             
-    return num_of_ints_in_range
-# print(count_nums_with_sqrt_close_to(10, .1))
-# print(count_nums_with_sqrt_close_to(100, .1))
+#     return num_of_ints_in_range
+# # print(count_nums_with_sqrt_close_to(10, .1))
+# # print(count_nums_with_sqrt_close_to(100, .1))
 
-def calc(op, x, y):
-    return op(x,y)
+# def calc(op, x, y):
+#     return op(x,y)
 
-def div(a,b):
-    if b != 0:
-        return a/b
-    print("Demon was 0.")
+# def div(a,b):
+#     if b != 0:
+#         return a/b
+#     print("Demon was 0.")
 
-res = calc(div,2,1)
+# res = calc(div,2,1)
+
+# def apply(criteria,n):
+#     count = 0
+#     for num in range(n+1):
+#         if criteria(num):
+#             count+=1
+#     return count
+
+
+# def is_even(x):
+#     return x%2==0
+
+# how_many = apply(is_even, 10)
+# print(how_many)
+
+def same_chars(s1, s2):
+    """
+    s1 and s2 are strings
+    Returns boolean True is a character in s1 is also in s2, and vice 
+    versa. If a character only exists in one of s1 or s2, returns False.
+    """
+    # Your code here
+    
