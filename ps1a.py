@@ -337,27 +337,46 @@ Created on Thu Jul 31 14:28:41 2025
 
 # Par a - find the number of months it takes to save a down payment
 
-yearly_salary = float(input("What is your yearly salary? "))
-portion_saved = float(input("How much of your salary are you saving? "))
-cost_of_dream_home = float(input("What is the cost of your dream home? "))
-portion_down_payment = cost_of_dream_home * 0.25
-amount_saved = 0
-r = 0.05
-months = 0
+# yearly_salary = float(input("What is your yearly salary? "))
+# portion_saved = float(input("How much of your salary are you saving? "))
+# cost_of_dream_home = float(input("What is the cost of your dream home? "))
+# portion_down_payment = cost_of_dream_home * 0.25
+# amount_saved = 0
+# r = 0.05
+# months = 0
+
+# # while amount_saved <= portion_down_payment:
+# #     months += 1
+# #     amount_saved += ((yearly_salary/12)*portion_saved) + amount_saved*(r/12)
+    
+# # print(months)
+
+
+# ### Part b 
+# semi_annual_raise = float(input("What is your semi annual raise? "))
 
 # while amount_saved <= portion_down_payment:
 #     months += 1
 #     amount_saved += ((yearly_salary/12)*portion_saved) + amount_saved*(r/12)
-    
+#     if months%6 ==0:
+#         yearly_salary +=  yearly_salary * semi_annual_raise
 # print(months)
 
 
-### Part b 
-semi_annual_raise = float(input("What is your semi annual raise? "))
+#PART C
 
-while amount_saved <= portion_down_payment:
-    months += 1
-    amount_saved += ((yearly_salary/12)*portion_saved) + amount_saved*(r/12)
-    if months%6 ==0:
-        yearly_salary +=  yearly_salary * semi_annual_raise
-print(months)
+initial_deposit = float(input("Enter the initial amount in your savings: "))
+down_payment = 800000 * .25
+amount_saved = 0
+months = 0
+
+
+low = 0
+high = 1.0
+r = (high + low)/2.0
+
+epsilon = 100
+
+while abs(amount_saved - downpayment) >= 100 and months < 36:
+    months += 
+    
