@@ -309,13 +309,18 @@ def same_chars(s1, s2):
     versa. If a character only exists in one of s1 or s2, returns False.
     """
     # Your code here
-    count = 0
+    # for char in s1:
+    #     if char not in s2:
+    #         return False
+    # for char2 in s2:
+    #     if char2 not in s1:
+    #         return False
+    # return True
     for char in s1:
-        if char not in s2:
-            return False
-    for char2 in s2:
-        if char2 not in s1:
-            return False
+        for char2 in s2:
+            # print(f"char1 is {char}, char2 is {char2}")
+            if char not in s2 or char2 not in s1:
+                return False
     return True
 
 print(same_chars("abc", "cab"))     # prints True
