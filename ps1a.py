@@ -302,32 +302,53 @@ Created on Thu Jul 31 14:28:41 2025
 # how_many = apply(is_even, 10)
 # print(how_many)
 
-def same_chars(s1, s2):
-    """
-    s1 and s2 are strings
-    Returns boolean True is a character in s1 is also in s2, and vice 
-    versa. If a character only exists in one of s1 or s2, returns False.
-    """
-    count = 0
-    # Your code here
-    for char in s1:
-        count += 1
-        if char not in s2:
-            return False, count
-    for char2 in s2:
-        count += 1
-        if char2 not in s1:
-            return False, count
-    return True, count
-    # not efficent at all
-    # for char in s1:
-    #     for char2 in s2:
-    #         count += 1
-    #         if char not in s2 or char2 not in s1:
-    #             return False, count
-    # return True, count
+# def same_chars(s1, s2):
+#     """
+#     s1 and s2 are strings
+#     Returns boolean True is a character in s1 is also in s2, and vice 
+#     versa. If a character only exists in one of s1 or s2, returns False.
+#     """
+#     count = 0
+#     # Your code here
+#     for char in s1:
+#         count += 1
+#         if char not in s2:
+#             return False, count
+#     for char2 in s2:
+#         count += 1
+#         if char2 not in s1:
+#             return False, count
+#     return True, count
+#     # not efficent at all
+#     # for char in s1:
+#     #     for char2 in s2:
+#     #         count += 1
+#     #         if char not in s2 or char2 not in s1:
+#     #             return False, count
+#     # return True, count
 
-print(same_chars("abc", "cab"))     # prints True
-print(same_chars("abccc", "caaab")) # prints True
-print(same_chars("abcd", "cabaa"))  # prints False
-print(same_chars("abcabc", "cabz")) # prints False
+# print(same_chars("abc", "cab"))     # prints True
+# print(same_chars("abccc", "caaab")) # prints True
+# print(same_chars("abcd", "cabaa"))  # prints False
+# print(same_chars("abcabc", "cabz")) # prints False
+
+###PROBLEM SET A-C
+
+
+# Par a - find the number of months it takes to save a down payment
+
+yearly_salary = float(input("What is your yearly salary? "))
+portion_saved = float(input("How much of your salary are you saving? "))
+cost_of_dream_home = float(input("What is the cost of your dream home? "))
+portion_down_payment = cost_of_dream_home * 0.25
+amount_saved = 0
+r = 0.05
+months = 0
+
+while amount_saved <= portion_down_payment:
+    months += 1
+    amount_saved += ((yearly_salary/12)*portion_saved) + amount_saved*(r/12)
+    # amount_saved += amount_saved*(r/12)
+    print(amount_saved)
+    
+print(months)
