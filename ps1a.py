@@ -385,8 +385,12 @@ while abs(amount_saved - down_payment) >= 100:
         low = r
     r = (high + low)/2.0
     steps += 1
-    if steps > 40:
+    #Need better break condition
+    if r > .99:
         break
-        
-print(f"Best savings rate: {r} or very close!")
-print(f"Steps in bisection search: {steps}")
+
+if r < .99:        
+    print(f"Best savings rate: {r} or very close!")
+    print(f"Steps in bisection search: {steps}")
+else:
+    print("You are too poor!")
