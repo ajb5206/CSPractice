@@ -288,19 +288,21 @@ Created on Thu Jul 31 14:28:41 2025
 
 # res = calc(div,2,1)
 
-# def apply(criteria,n):
-#     count = 0
-#     for num in range(n+1):
-#         if criteria(num):
-#             count+=1
-#     return count
+def apply(criteria,n):
+    count = 0
+    for num in range(n+1):
+        if criteria(num):
+            count+=1
+    return count
 
 
-# def is_even(x):
-#     return x%2==0
+def is_even(x):
+    return x%2==0
 
-# how_many = apply(is_even, 10)
-# print(how_many)
+how_many = apply(is_even, 100)
+how_many_lambda = apply(lambda x: x%2==0, 100)
+print(how_many)
+print(f"Lambda {how_many_lambda}")
 
 # def same_chars(s1, s2):
 #     """
@@ -396,25 +398,25 @@ Created on Thu Jul 31 14:28:41 2025
 #     print("You are too poor!")
     
 
-def dot_product(tA, tB):
-    """
-    tA: a tuple of numbers
-    tB: a tuple of numbers of the same length as tA
-    Assumes tA and tB are the same length.
-    Returns a tuple where the:
-    * first element is the length of one of the tuples
-    * second element is the sum of the pairwise products of tA and tB
-    """
-    # Your code here
-    length = len(tA)
-    total = 0
-    for i in range(length):
-        total += tA[i] * tB[i]
+# def dot_product(tA, tB):
+#     """
+#     tA: a tuple of numbers
+#     tB: a tuple of numbers of the same length as tA
+#     Assumes tA and tB are the same length.
+#     Returns a tuple where the:
+#     * first element is the length of one of the tuples
+#     * second element is the sum of the pairwise products of tA and tB
+#     """
+#     # Your code here
+#     length = len(tA)
+#     total = 0
+#     for i in range(length):
+#         total += tA[i] * tB[i]
     
-    return (length, total)
+#     return (length, total)
         
 
-# Examples:
-tA = (1, 2, 3)
-tB = (4, 5, 6)   
-print(dot_product(tA, tB)) # prints (3,32)
+# # Examples:
+# tA = (1, 2, 3)
+# tB = (4, 5, 6)   
+# print(dot_product(tA, tB)) # prints (3,32)
