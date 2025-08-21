@@ -288,21 +288,27 @@ Created on Thu Jul 31 14:28:41 2025
 
 # res = calc(div,2,1)
 
-def apply(criteria,n):
-    count = 0
-    for num in range(n+1):
-        if criteria(num):
-            count+=1
-    return count
+# def apply(criteria,n):
+#     count = 0
+#     for num in range(n+1):
+#         if criteria(num):
+#             count+=1
+#     return count
 
 
-def is_even(x):
-    return x%2==0
+# def is_even(x):
+#     return x%2==0
 
-how_many = apply(is_even, 100)
-how_many_lambda = apply(lambda x: x%2==0, 100)
-print(how_many)
-print(f"Lambda {how_many_lambda}")
+# print(is_even(8))
+# bool_value = (lambda x: x%2==0)(8)
+# print(bool_value)
+
+# how_many = apply(is_even, 100)
+# how_many_lambda = apply(lambda x: x%2==0, 100)
+# print(how_many)
+# print(f"Lambda {how_many_lambda}")
+
+
 
 # def same_chars(s1, s2):
 #     """
@@ -420,3 +426,23 @@ print(f"Lambda {how_many_lambda}")
 # tA = (1, 2, 3)
 # tB = (4, 5, 6)   
 # print(dot_product(tA, tB)) # prints (3,32)
+
+# def do_twice(n, fn):
+#     return fn(fn(n))
+
+# print(do_twice(3, lambda x: x**2))
+
+def char_counts(s):
+    """string of lower case chars, return tuple wthere first element
+    is the number of vowels and the second element is the number of consonants"""
+    vowels = "aeiou"
+    num_vowels = 0
+    num_consonants = 0
+    for e in s:
+        if e in vowels:
+            num_vowels += 1
+        else:
+            num_consonants += 1
+    return (num_vowels, num_consonants)
+
+print(char_counts("hello"))
