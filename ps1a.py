@@ -436,13 +436,15 @@ def char_counts(s):
     """string of lower case chars, return tuple wthere first element
     is the number of vowels and the second element is the number of consonants"""
     vowels = "aeiou"
-    num_vowels = 0
-    num_consonants = 0
+    # num_vowels = 0
+    # num_consonants = 0
+    (num_vowels, num_consonants) = (0,0)
     for e in s:
         if e in vowels:
             num_vowels += 1
         else:
             num_consonants += 1
+        print((num_vowels, num_consonants))
     return (num_vowels, num_consonants)
 
 print(char_counts("hello"))
