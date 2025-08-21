@@ -365,32 +365,56 @@ Created on Thu Jul 31 14:28:41 2025
 
 #PART C
 
-initial_deposit = float(input("Enter the initial amount in your savings: "))
-down_payment = 800000 * .25
-amount_saved = 0
-months = 0
-steps = 0
+# initial_deposit = float(input("Enter the initial amount in your savings: "))
+# down_payment = 800000 * .25
+# amount_saved = 0
+# months = 0
+# steps = 0
 
-low = 0
-high = 1.0
-r = (high + low)/2.0
+# low = 0
+# high = 1.0
+# r = (high + low)/2.0
 
-epsilon = 100
+# epsilon = 100
 
-while abs(amount_saved - down_payment) >= 100:
-    amount_saved = initial_deposit * (1 + r/12)**36
-    if amount_saved > down_payment:
-        high = r
-    else:
-        low = r
-    r = (high + low)/2.0
-    steps += 1
-    #Need better break condition
-    if r > .99:
-        break
+# while abs(amount_saved - down_payment) >= 100:
+#     amount_saved = initial_deposit * (1 + r/12)**36
+#     if amount_saved > down_payment:
+#         high = r
+#     else:
+#         low = r
+#     r = (high + low)/2.0
+#     steps += 1
+#     #Need better break condition
+#     if r > .99:
+#         break
 
-if r < .99:        
-    print(f"Best savings rate: {r} or very close!")
-    print(f"Steps in bisection search: {steps}")
-else:
-    print("You are too poor!")
+# if r < .99:        
+#     print(f"Best savings rate: {r} or very close!")
+#     print(f"Steps in bisection search: {steps}")
+# else:
+#     print("You are too poor!")
+    
+
+def dot_product(tA, tB):
+    """
+    tA: a tuple of numbers
+    tB: a tuple of numbers of the same length as tA
+    Assumes tA and tB are the same length.
+    Returns a tuple where the:
+    * first element is the length of one of the tuples
+    * second element is the sum of the pairwise products of tA and tB
+    """
+    # Your code here
+    length = len(tA)
+    total = 0
+    for i in range(length):
+        total += tA[i] * tB[i]
+    
+    return (length, total)
+        
+
+# Examples:
+tA = (1, 2, 3)
+tB = (4, 5, 6)   
+print(dot_product(tA, tB)) # prints (3,32)
