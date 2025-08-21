@@ -369,7 +369,7 @@ initial_deposit = float(input("Enter the initial amount in your savings: "))
 down_payment = 800000 * .25
 amount_saved = 0
 months = 0
-
+steps = 0
 
 low = 0
 high = 1.0
@@ -377,6 +377,16 @@ r = (high + low)/2.0
 
 epsilon = 100
 
-while abs(amount_saved - downpayment) >= 100 and months < 36:
-    months += 
-    
+while abs(amount_saved - down_payment) >= 100:
+    amount_saved = initial_deposit * (1 + r/12)**36
+    if amount_saved > down_payment:
+        high = r
+    else:
+        low = r
+    r = (high + low)/2.0
+    steps += 1
+    if steps > 40:
+        break
+        
+print(f"Best savings rate: {r} or very close!")
+print(f"Steps in bisection search: {steps}")
